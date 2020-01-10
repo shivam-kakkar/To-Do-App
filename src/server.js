@@ -5,24 +5,25 @@ let bodyParser = require('body-parser');
 let mongoClient = require('mongodb').MongoClient;
 
 //mongodb connectivity
-var mongoUrl = "mongodb://localhost:27017/";
+// var mongoUrl = "mongodb://localhost:27017/";
+var mongoUrl ="mongodb+srv://shivam:shivam027@cluster0-jg0ns.mongodb.net/test?retryWrites=true&w=majority";
 
 
 
 app.use(bodyParser.urlencoded({extended: true, limit: '50mb'}))
 app.use(bodyParser.json({limit: '50mb',extended: true}))
 
-mongoClient.connect(mongoUrl,(err,db)=>{
-  if(err) throw err;
-  var dbo = db.db('todolist');
+// mongoClient.connect(mongoUrl,(err,db)=>{
+//   if(err) throw err;
+//   var dbo = db.db('todolist');
   
-  dbo.collection('content').insertOne({'name':"list"},(err,res)=>{
-    if(err) throw err;
+//   dbo.collection('content').insertOne({'name':"list"},(err,res)=>{
+//     if(err) throw err;
   
-  })
+//   })
   
   
-})
+// })
 
 app.post('/sendData',(req,res)=>{
   
@@ -81,5 +82,5 @@ app.post('/updateData',(req,res)=>{
 
 
 server.listen(5000,(req,res)=>{
-  console.log("server is listening to port number 4000")
+  console.log("server is listening to port number 5000")
 })

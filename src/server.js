@@ -13,17 +13,17 @@ var mongoUrl ="mongodb+srv://shivam:shivam027@cluster0-jg0ns.mongodb.net/test?re
 app.use(bodyParser.urlencoded({extended: true, limit: '50mb'}))
 app.use(bodyParser.json({limit: '50mb',extended: true}))
 
-// mongoClient.connect(mongoUrl,(err,db)=>{
-//   if(err) throw err;
-//   var dbo = db.db('todolist');
+mongoClient.connect(mongoUrl,(err,db)=>{
+  if(err) throw err;
+  var dbo = db.db('todolist');
   
-//   dbo.collection('content').insertOne({'name':"list"},(err,res)=>{
-//     if(err) throw err;
+  dbo.collection('content').insertOne({'name':"list"},(err,res)=>{
+    if(err) throw err;
   
-//   })
+  })
   
   
-// })
+})
 
 app.post('/sendData',(req,res)=>{
   

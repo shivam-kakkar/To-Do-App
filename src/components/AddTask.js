@@ -9,7 +9,7 @@ import classnames from 'classnames'
 
 import "react-datepicker/dist/react-datepicker.css";
 
-//Test Kuku
+//Test
 
 class AddTask extends Component {
   state = {
